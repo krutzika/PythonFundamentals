@@ -19,12 +19,14 @@ class LinkedList:
         else:
             new_node.next = self.head
             self.head = new_node
+            return
             
     def insertion_at_end(self, data):
         new_node = Node(data)
         
         if self.head == None:
             self.head = new_node
+            return
         
         current_node = self.head 
         
@@ -32,6 +34,7 @@ class LinkedList:
             current_node = current_node.next
         
         current_node.next = new_node
+        return
         
     def insertion_at_index(self, data, index):
         new_node = Node(data)
@@ -51,6 +54,8 @@ class LinkedList:
             new_node.next = current_node.next
             current_node.next = new_node
             
+        return
+    
     def update_node(self, data, index):
         position = 0 
         current_node=self.head
@@ -67,11 +72,13 @@ class LinkedList:
             current_node.data = data 
         else:
             print("The index is wrong")
+        return
             
     def delete_node_at_begining(self):
         if (self.head == None):
             return 
         self.head = self.head.next
+        return
     
     def delete_node_at_end(self):
         
@@ -84,6 +91,7 @@ class LinkedList:
             current_node = current_node.next
         
         current_node.next = None
+        return
             
     def delete_node_index(self, index):
        
